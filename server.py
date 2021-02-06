@@ -34,7 +34,7 @@ def register_new_clients():
         CLIENTS[client_connection.fileno()] = client_connection
         # TODO and how do you close your server?(hint thread.join())
         threading.Thread(target=client_recv, args=([client_connection])).start()
- s
+ 
 
 def activate_server():
     threading.Thread(target=register_new_clients).start()
